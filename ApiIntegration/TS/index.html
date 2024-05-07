@@ -1,0 +1,234 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="../TS/css/style.css">
+    
+</head>
+<body class="bodyclass">
+    <div class="buttons" id="buttons" style="display: block;">
+        <input type="button" value="Sign In" onclick="SignInbutton()" class="signinid">
+        <input type="button" value="Sign Up" onclick="SignUpbutton()" class="signupid">
+        
+    </div>
+    <div class="sign-in" id="signin-page" style="display: none;">
+        <h2 class="text">Sign In</h2>
+        <form>
+            <label>UserID</label>
+            <input type="text" id="existinguserid">
+            <br><br>
+            <input type="button" id="signin" onclick="SignIn()" value="Sign In"></button>
+            <br>
+        </form>
+    </div>
+
+    <div class="sign-up" id="signup-page" style="display: none;">
+        <h3>Sign Up</h3>
+        <form>
+            <label>Email</label>
+            <input type="email" id="mail">
+            <br>
+            <label>Username</label>
+            <input type="text" id="name">
+            <br>
+            <label>Password</label>
+            <input type="password" id="pwd">
+            <br>
+            <label>Confirm Password</label>
+            <input type="password" id="confirm-password">
+            <br>
+            <label>Phone</label>
+            <input type="text" id="number">
+            <br>
+            <label>Balance</label>
+            <input type="number" id="balance">
+            <br>
+            <input type="button" id="submit" value="Submit" onclick="SignUp()">
+        </form>
+    </div>
+
+    
+
+    <div class="medicine"  id="menubar" style="display: none;">
+        <input type="button" id="home" value="Home" onclick="Home()">
+        <input type="button" id="medicine" onclick="renderTable()" value="Medicine Details">
+        <!--<input type="button" id="purchase" value="Purchase" onclick="Purchase()">-->
+        <input type="button" id="buy" value="MedicinePurchase" onclick="PurchaseTable()">
+        <input type="button" id="cancel" value="Cancel" onclick="Cancel()">
+        <input type="button" id="top-up" value="Top Up" onclick="TopupForm()">
+        <input type="button" id="balance" onclick="Balance()" value="Show Balance">
+        <input type="button" id="history" value="Order History" onclick="Orders()">
+        <input type="button" id="signout" value="Sign Out" onclick="SignOut()">
+        
+    </div>
+
+    <div class="home" id="home-page" style="display: none;">
+        <label id="greet"></label>
+    </div>
+
+    <div id="table" style="display: none;">
+        <input type="button" id="addbtn" value="Add" onclick="AddMed()">
+        <table id="data" border="3">
+            <thead>
+                <tr>
+                    <th>MedicineName</th>
+                    <th>MedicinePrice</th>
+                    <th>Count</th>
+                    <th>Expiry</th>
+                    <th>Updation</th>
+                </tr>
+            </thead>
+            <tbody>
+
+            </tbody>
+            
+        </table>
+    </div>
+    <div class="topupForm" id="topup_form" style="display: none;">
+        <form id="Topup">
+            <label >Enter amount to recharge</label>
+            <input id="amount" type="number">
+            <br>
+            <input type="button" onclick="TopUp()" value="Topup" class="btn-topup">
+            <br>
+        </form>
+        
+    </div>
+
+    <div class="purchase" id="purchasing" style="display: none; padding: 1rem;">
+        <form id="purchase-details">
+            <label>Medicine:</label>
+            <select id="medicine_list">
+                <option id="option1">Paracetomel</option>
+                <option id="option2">Colpal</option>
+                <option id="option3">Stepsil</option>
+            </select>
+            <br>
+            <label>Purchase Count</label>
+            <input type="number" id="count" onkeyup="CheckCount()">
+            <br>
+            <input type="button" id="addmedicine" value="Add" onclick="Add()" >
+            <br>
+            <br>
+            
+        </form>
+    </div>
+
+    <div class="medicine-list" id="medicine_list" style="display: none;">
+        <table id="purchase-list" border="3">
+            <thead>
+                <tr>
+                    <th>MedicineName</th>
+                    <th>Count</th>
+                    <th>Action</th>
+                    <th>Confirm Purchase</th>
+                </tr>
+            </thead>
+            <tbody>
+
+            </tbody>
+        </table>
+
+    </div>
+    <div class="orderDetails" id="order_table" style="display: none;">
+        <table id="orders" border="3">
+            <thead>
+                <tr>
+                    <th>UserID</th>
+                    <th>MedicineID</th>
+                    <th>MedicineName</th>
+                    <th>Count</th>
+                    <th>Medicine Price</th>
+                    <th>Order Status</th>
+                </tr>
+            </thead>
+            <tbody>
+
+            </tbody>
+        </table>
+    </div>
+
+    <div class="cancel" id="cancel_table" style="display: none;">
+        
+        <table id="cancel_order" border="3">
+            <thead>
+                <tr>
+                    <th>UserID</th>
+                    <th>MedicineID</th>
+                    <th>MedicineName</th>
+                    <th>Count</th>
+                    <th>Price</th>
+                    <th>Order Status</th>
+                    <th >Action</th>
+
+                </tr>
+            </thead>
+            <tbody>
+
+            </tbody>
+            
+
+        </table>
+    </div>
+    <!--newly added-->
+    <div id="purchase_table" style="display: none;">
+        
+        <table id="purchasedata" border="3">
+            <thead>
+                <tr>
+                    <th>MedicineName</th>
+                    <th>MedicinePrice</th>
+                    <th>Count</th>
+                    <th>Expiry</th>
+                    <th>Action</th>
+                    
+                </tr>
+            </thead>
+            <tbody>
+
+            </tbody>
+            
+        </table>
+    </div>
+    <div id="list" style="display: none;">
+        <form id="getcount">
+           
+            <label>Enter Count</label>
+            <input type="number" id="quantity">
+            <br><br>
+            <input type="button" value="Buy Medicine" id="confirm" onclick="BuyMedicine()">
+        </form>
+
+    </div>
+
+    <div id="newmedicine" style="display: none;" style="display: none;">
+        <form id="addmedicine">
+            <label>Enter medicine name</label>
+            <input type="text" id="medname">
+            <br>
+            <label>Enter medicine count</label>
+            <input type="number" id="medcount">
+            <br>
+            <label>Enter Price</label> 
+            <input type="number" id="medprice">
+            <input type="button" onclick="SubmitMedicine()" value="submit">
+        </form>
+    </div>
+    <div id="edit" style="display: none;">
+        <form id="editmedicine">
+            <label>Enter medicine name</label>
+            <input type="text" id="mednameEdit">
+            <br>
+            <label>Enter medicine count</label>
+            <input type="number" id="medcountEdit">
+            <br>
+            <label>Enter Price</label> 
+            <input type="number" id="medpriceEdit">
+            <input type="button" onclick="SubmitMedicine()" value="submit">
+        </form>
+    </div>
+    <script src="index.js"></script>
+</body>
+</html>

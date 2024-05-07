@@ -1,0 +1,53 @@
+.signinid , .signupid
+{
+    padding-right:4rem;
+    padding-left: 4rem;
+    background: darkblue;
+    padding-top: 0.5rem;
+    padding-bottom: 0.5rem;
+    color: white;
+    font-size: 1.2rem;
+
+}
+
+#signin-page ,#table ,#purchase_table,#cancel_table,#topup_form,#order_table ,#list
+{
+    padding: 1rem;
+    color:darkblue;
+}
+
+.bodyclass
+{
+    background-color: antiquewhite;
+}
+
+.sign-in 
+{
+    color: darkblue;
+}
+#signin
+{
+    background-color: darkblue;
+    padding-left: 1.2rem;
+    padding-right: 1.2rem;
+    color:white;
+}
+
+#menubar
+{
+    background-color: darkblue;
+    padding-top:1rem;
+    padding-bottom: 1rem;
+}
+#home , #medicine , #buy , #cancel , #top-up , #balance , #history ,#signout
+{
+    background: darkblue;
+    border: none;
+    color: white;
+}
+
+.btn-topup ,#confirm
+{
+    background-color: darkblue;
+    color: white;
+}

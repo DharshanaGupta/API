@@ -1,0 +1,125 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="../MetrocardTypescript/CSS/style.css">
+</head>
+<body>
+    <div id="buttons" style="display: block;">
+        <input type="button" id="signin" value="Sign in" onclick="SigninButton()">
+        <input type="button" id="signup" value="Sign Up" onclick="SignUpbutton()">
+    </div>
+    <div id="signin_page" style="display: none;">
+        <label>CardNumber:</label>
+        <input type="text" id="cardNumber">
+        <input type="button" id="signin" value="Sign in" onclick="SignIn()">
+    </div>
+    <div id="signup_page" style="display: none;">
+        <h3>Sign Up Page</h3>
+        <label>Email:</label>
+        <input type="email" id="mailid">
+        <br>
+        <label>Username:</label>
+        <input type="text" id="name">
+        <br>
+        <label>Password</label>
+        <input type="password" id="pwd">
+        <br>
+        <label >Confirm Password</label>
+        <input type="password" id="confirmpassword">
+        <br>
+        <label>Phone</label>
+        <input type="text" id="phone">
+        <br>
+        <label>Balance</label>
+        <input type="number" id="balance">
+        <br>
+        <input type="button" value="Submit" id="submitbtn" onclick="SignUp()">
+    </div>
+
+    <div id="menubar" style="display: none;">
+        <input type="button" value="Home" onclick="Home()">
+        <input type="button" value="Balance Check" onclick="Balance()">
+        <input type="button" value="Recharge" onclick="RechargeFormDisplay()">
+        <input type="button" value="Fair Details" onclick="FairDetails()">
+        <input type="button" value="Travel" onclick="Travelbtn()"> 
+        <input type="button" value="Travel History" onclick="TravelDetails()">
+        <input type="button" value="SignOut" onclick="Signout()">
+    </div>
+
+    <div id="home" style="display: none;">
+        <label id="greet"></label>
+    </div>
+
+    <div id="topup" style="display: none;">
+        <label>Enter Amount to Recharge</label>
+        <input type="number" id="top_up">
+        <br>
+        <input type="button" value="Recharge" onclick="Recharge()">
+    </div>
+
+    <div id="FairDetails" style="display: none;">
+        <table id="fair" border="3">
+            <thead>
+                <tr>
+                    <th>From Loaction</th>
+                    <th>To Location</th>
+                    <th>Fair</th>
+                </tr>
+            </thead>
+            <tbody>
+
+            </tbody>
+            
+        </table>
+    </div>
+
+    <div id="travel" style="display: none;">
+        <table id="makeTravel" border="3">
+            <thead>
+                <tr>
+                    <th>From Loaction</th>
+                    <th>To Location</th>
+                    <th>Fair</th>
+                    <th>GetTickets</th>
+                </tr>
+
+            </thead>
+            <tbody>
+                
+            </tbody>
+        </table>
+    </div>
+
+    <div id="history" style="display: none;">
+        <table id="travelHistory" border="3">
+            <thead>
+                <tr>
+                    <th>FromLocation</th>
+                    <th>ToLocation</th>
+                    <th>Price</th>
+                    <th>Date</th>
+                    <th>Status</th>
+                </tr>
+
+            </thead>
+            <tbody>
+
+            </tbody>
+
+        </table>
+    </div>
+
+    <div id="count" style="display: none;">
+        <form id="ticketCount">
+            <label>Enter the count of Tickets:</label>
+            <input type="number" id="getcount">
+            <br>
+            <input type="button" value="Submit" onclick="confirmTravel()">
+        </form>
+    </div>
+    <script src="metrocard.js"></script>
+</body>
+</html>
