@@ -1,0 +1,62 @@
+#export
+{
+    margin-left:46%;
+}
+
+.library
+{
+    background-color: lightskyblue;
+    
+}
+.signinid, .signupid
+{
+    padding-right: 2rem;
+    padding-left: 2rem;
+    padding-top: 0.5rem;
+    padding-bottom: 0.5rem;
+    background: black;
+    color: white;
+    border-radius: 9px;
+}
+
+#buttons
+{
+    padding: 3rem;
+    margin-left: 26rem;
+    
+}
+
+#signin_page
+{
+    padding: 10rem;
+    margin-left: 20rem;
+}
+
+#existingmail
+{
+    margin-left: 22px;
+}
+
+#signin
+{
+    background: black;
+    color: white;
+}
+#menubar
+{
+    background: black;
+    padding-top: 0.5rem;
+    padding-bottom: 0.5rem;
+}
+
+#Home , #recharge, #balance , #show ,#borrow, #return ,#display,#signout
+{
+    background: black;
+    color: white;
+    border: none;
+}
+
+.topupForm,#details,#borrowbook,#returnbook,#history
+{
+    padding:2rem;
+}

@@ -1,0 +1,184 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="../Library/CSS/style.css">
+</head>
+<body class="library">
+    <div class="buttons" id="buttons" style="display: block;">
+        <input type="button" value="Sign In" onclick="SignInbutton()" class="signinid">
+        <input type="button" value="Sign Up" onclick="SignUpbutton()" class="signupid">
+        
+    </div>
+
+    <div class="sign-in" id="signin_page" style="display: none;">
+        <h2 class="text">Sign In</h2>
+        <form>
+            <label>Email</label>
+            <input type="email" id="existingmail">
+            <br><br>
+            <label>Password</label>
+            <input type="password" id="password">
+            <br><br>
+            <input type="button" id="signin" onclick="SignIn()" value="Sign In"></button>
+            <br>
+        </form>
+    </div>
+    <div class="sign-up" id="signup_page" style="display: none;">
+        <h3>Sign Up</h3>
+        <form>
+            <label>Email</label><br>
+            <input type="email" id="mail">
+            <br>
+            <label>Username</label><br>
+            <input type="text" id="name">
+            <br>
+            <label>Password</label><br>
+            <input type="password" id="pwd">
+            <br>
+            <label>Confirm Password</label><br>
+            <input type="password" id="confirm_password">
+            <br>
+            <label>Phone</label><br>
+            <input type="text" id="number">
+            <br>
+            <label>Balance</label><br>
+            <input type="number" id="balanceamt">
+            <br>
+            <label>Gender</label><br>
+            <input type="text" id="gender">
+            <br>
+            <label>Department</label><br>
+            <input type="text" id="dept">
+            <br>
+            <input type="button" id="submit" value="Submit" onclick="SignUp()">
+        </form>
+    </div>
+
+    <div class="books" id="menubar" style="display: none;">
+        <input type="button" id="Home" value="Home" onclick="Home()">
+        <input type="button" id="recharge" value="Recharge" onclick="TopUpForm()">
+        <input type="button" id="balance" value="Balance" onclick="Balance()">
+        <input type="button" id="show" value="BookDetails" onclick="bookTable()">
+        <input type="button" id="borrow" value="Borrow Books" onclick="borrowtable()">
+        <input type="button" id="return" value="Return Books" onclick="returnTable()">
+        <input type="button" id="display" value="Borrowdetails" onclick="historyTable()">
+        <input type="button" id="signout" value="SignOut" onclick="SignOut()">
+        
+    </div>
+
+    <div class="home" id="home_page" style="display: none;">
+        <label id="greet"></label>
+    </div>
+
+    <div class="topupForm" id="topup_form" style="display: none;">
+        <form id="Topup">
+            <label >Enter amount to recharge</label>
+            <input id="amount" type="number">
+            <br>
+            <input type="button" onclick="TopUp()" value="Topup" class="btn-topup">
+            <br>
+        </form>
+        
+    </div>
+    <div id="history" style="display: none;">
+        <a><button id="export" onclick="Export()">Export</button></a>
+        <br>
+        <table id="borrow_history" border="3">
+            <thead>
+                <tr>
+                    <th>BorrowID</th>
+                    <th>BookID</th>
+                    <th>UserID</th>
+                    <th>Borrowed Date</th>
+                    <th>BorrowBookCount</th>
+                    <th>Status</th>
+                    <th>PaidFineAmount</th>
+                </tr>
+            </thead>
+            <tbody>
+
+            </tbody>
+        </table>
+    </div>
+    <div id="details" style="display: none;" >
+        <input type="button" id="add" value="Add" onclick="Add()">
+        <table id="bookdetails" border="3">
+            <thead>
+                <tr>
+                    <th>BookID</th>
+                    <th>BookName</th>
+                    <th>AuthorName</th>
+                    <th>BookCount</th>
+                    <th>Action</th>
+                    
+                </tr>
+            </thead>
+            <tbody>
+
+            </tbody>
+        </table>
+    </div>
+    <div id="returnbook" style="display: none;">
+        <table id="return" border="3">
+            <thead>
+                <tr>
+                    <th>BorrowID</th>
+                    <th>BookID</th>
+                    <th>UserID</th>
+                    <th>Borrowed Date</th>
+                    <th>BorrowBookCount</th>
+                    <th>Status</th>
+                    <th>PaidFineAmount</th>
+                    <th>Action</th>
+                </tr>
+            </thead>
+            <tbody>
+
+            </tbody>
+        </table>
+
+    </div>
+
+    <div id="borrowbook" style="display: none;" >
+        <table id="buyBooks" border="3">
+            <thead>
+                <tr>
+                    <th>BookID</th>
+                    <th>BookName</th>
+                    <th>AuthorName</th>
+                    <th>BookCount</th>
+                    <th>Action</th>
+                    <th>UploadImage</th>
+                </tr>
+            </thead>
+            <tbody>
+
+            </tbody>
+        </table>
+        
+    </div>
+    <div id="form" style="display: none;">
+        <table id="borrowform" style="display: none;">
+            <label>Enter book count</label>
+            <input type="number" id="bookcount">
+            <input type="button" onclick="borrowSubmit()" value="submit">
+        </table>
+    </div>
+    <div id="addbook" style="display: none;">
+        <label>Enter book name</label>
+        <input type="text" id="bookname">
+        <br>
+        <label>Enter Author name</label>
+        <input type="text" id="authorname">
+        <br>
+        <label>Enter Count</label>
+        <input type="number" id="countbook">
+        <br>
+        <input type="button" id="addingbook" onclick="SubmitBook()" value="submit"> 
+    </div>
+    <script src="index.js"></script>
+</body>
+</html>
